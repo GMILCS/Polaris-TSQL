@@ -1,4 +1,4 @@
-USE Polaris
+--USE Polaris
 SELECT COL.Name AS 'Collection', DatePart(yyyy, getdate()) as 'CurrYear', AVG(BR.PublicationYear) AS 'AvgAge'
 INTO #TEMP
 FROM polaris.Bibliographicrecords BR
