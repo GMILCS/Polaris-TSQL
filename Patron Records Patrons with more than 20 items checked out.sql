@@ -3,7 +3,6 @@ SELECT
       COUNT(ItemRecordID) [NumItemsOut]
 FROM
       ItemCheckouts
-
 GROUP BY
       PatronID
 HAVING
