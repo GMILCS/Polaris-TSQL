@@ -1,6 +1,4 @@
 --This query uses the PolarisTransactions database, so no time limit on results if you keep your transactions:
-
-
 Use PolarisTransactions
 select org.name as SendingLibrary, orgn.name as ReceivingLibrary, count(td.transactionid) as NumberSent
 from polaris.transactionheaders th with(nolock) 
