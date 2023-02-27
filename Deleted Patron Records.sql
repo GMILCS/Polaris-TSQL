@@ -1,4 +1,4 @@
---I’m going to assume you have transaction logging turned on for Patron registration deleted. (To check, go to SA > Database Tables > Transaction logging and look for the entry)
+--Iâ€™m going to assume you have transaction logging turned on for Patron registration deleted. (To check, go to SA > Database Tables > Transaction logging and look for the entry)
 --If you do, then this should tell you what you need to know.
  
 select td.numvalue as PatronID, o.Name as Location,  w.ComputerName, pu.Name as DeletedBy, th.TransactionDate 
