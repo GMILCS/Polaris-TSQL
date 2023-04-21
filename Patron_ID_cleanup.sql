@@ -1,4 +1,4 @@
 SELECT OrganizationID, PatronID
-FROM PatronRegistration
-WHERE OrganizationID = 23
+FROM ViewPatronRegistration
+WHERE OrganizationID = 21
 AND User1 IS NOT NULL
