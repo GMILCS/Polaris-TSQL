@@ -1,0 +1,13 @@
+SELECT o.Name AS [Library], c.Name AS [Collection], mt.Description AS [Material Type], COUNT(*) AS [Items Withdrawn]
+FROM Polaris.Polaris.CircItemRecords AS [cir] WITH (NOLOCK)
+INNER JOIN Polaris.Polaris.Organizations AS [o] WITH (NOLOCK)
+ON cir.AssignedBranchID = o.OrganizationID
+INNER JOIN Polaris.Polaris.MaterialTypes AS [mt] WITH (NOLOCK)
+ON cir.MaterialTypeID = mt.MaterialTypeID
+LEFT OUTER JOIN Polaris.Polaris.Collections AS [c] WITH (NOLOCK)
+on cir.AssignedCollectionID = c.CollectionID
+WHERE cir.ItemStatusID = '11'
+AND cir.ItemStatusDate BETWEEN @StartDate AND DATEADD(day,1,@EndDate)
+AND o.OrganizationID IN (@Organizations)
+GROUP BY o.Name, c.Name, mt.Description
+ORDER BY o.Name, c.Name, mt.Description
