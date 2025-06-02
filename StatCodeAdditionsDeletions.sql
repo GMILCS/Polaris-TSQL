@@ -6,7 +6,7 @@
 
 begin tran
 DELETE FROM StatisticalCodes
-WHERE OrganizationID IN (3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,32,33,35,36)
+WHERE OrganizationID IN (3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,32,33,35,36,38)
 AND Description = 'NES CD Music'
 	--'HPL CD''s' --example of how to capture 's: use two single quotes
 --commit
@@ -15,7 +15,7 @@ AND Description = 'NES CD Music'
 begin tran
 update StatisticalCodes
 set Description = 'NES Juvenile Graphic Novels NF' -- New name
-where OrganizationID IN (3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,32,33,35,36) 
+where OrganizationID IN (3,5,7,9,11,13,15,17,19,21,23,25,27,29,31,32,33,35,36,38) 
 AND Description = 'NES Juvenile Comix NF' -- Old name
 --commit
 
